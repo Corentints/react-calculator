@@ -32,41 +32,39 @@ function reverseSign(state) {
   return obj;
 }
 
-/**
- * Calculate result and lastValue by the operator
- * @param state
- * @returns {*}
+/*
+ * return the result of a OPERATOR b (with precision of 7 numbers)
  */
-function calc(state) {
-  const obj = state;
-  const result = parseFloat(obj.result);
-  const lastValue = parseFloat(obj.lastValue);
+export function calc(calculation) {
+  const splittedCalc = calculation.split(' ');
+  const a = splittedCalc[0];
+  const operator = splittedCalc[1];
+  const b = splittedCalc[2];
+  let result;
 
-  switch (obj.operator) {
+  switch (operator) {
     case '÷':
-      obj.result = lastValue === 0 ? 0 : result / lastValue;
+      result = b === '0' ? 'Error' : a / b;
       break;
     case 'x':
-      obj.result = result * lastValue;
+      result = a * b;
       break;
     case '+':
-      obj.result = result + lastValue;
+      result = a + b;
       break;
     case '-':
-      obj.result = result - lastValue;
+      result = a - b;
       break;
     default:
+      result = 0;
       break;
   }
-
-  obj.result = formatNumber(obj.result);
-  obj.lastValue = null;
-  obj.operator = null;
-  return obj;
+  return result === 'Error' ? 'Error' : formatNumber(result);
 }
 
-export default function calculate(state, value) {
+export function calculate(state, value) {
   const obj = state;
+  obj.result = obj.result.replace('Error', '0');
 
   if (value === 'AC') {
     if (!obj.operator) {
@@ -115,7 +113,9 @@ export default function calculate(state, value) {
 
   if (value === '=') {
     if (obj.lastValue !== null && obj.result !== null) {
-      return calc(obj);
+      obj.result = calc(`${obj.result} ${obj.operator} ${obj.lastValue}`).toString();
+      obj.lastValue = null;
+      obj.operator = null;
     }
     return obj;
   }
