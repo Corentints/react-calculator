@@ -66,7 +66,11 @@ export default function calculate(state, value) {
   const obj = state;
 
   if (value === 'AC') {
-    return resetObj();
+    if (!obj.operator) {
+      return resetObj();
+    }
+    obj.lastValue = '0';
+    return obj;
   }
 
   if (value === '+/-') {
