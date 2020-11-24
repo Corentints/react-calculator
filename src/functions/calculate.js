@@ -86,6 +86,15 @@ export default function calculate(state, value) {
     return obj;
   }
 
+  if (value === '.') {
+    if (obj.lastValue !== null) {
+      obj.lastValue += obj.lastValue.includes('.') ? '' : '.';
+    } else {
+      obj.result += obj.result.includes('.') ? '' : '.';
+    }
+    return obj;
+  }
+
   if (!Number.isNaN(parseFloat(value))) {
     if (!obj.operator) { // no operator entered, so we modify the result
       if (obj.result === '0') {
