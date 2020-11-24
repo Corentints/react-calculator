@@ -1,5 +1,8 @@
 import { calc } from './calculate';
 
+// inspired by the cases stated by Mozilla for their calculator
+// available here: https://mozilla.github.io/calculator/test/
+
 describe('divisions', () => {
   test('two positives int', () => {
     expect(calc('1 ÷ 2')).toBe('0.5');
