@@ -1,4 +1,7 @@
 module.exports = {
+  purge: [
+    './src/**/*.js',
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -9,9 +12,5 @@ module.exports = {
   plugins: [],
   corePlugins: {
     animation: false,
-  },
-  purge: {
-    enabled: true,
-    content: ['./src/**/*.js'],
   },
 };
