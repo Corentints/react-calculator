@@ -101,8 +101,11 @@ export default function calculate(state, value) {
     return obj;
   }
 
-  if (value === '=' && obj.lastValue !== null && obj.result !== null) {
-    return calc(obj);
+  if (value === '=') {
+    if (obj.lastValue !== null && obj.result !== null) {
+      return calc(obj);
+    }
+    return obj;
   }
 
   obj.operator = value;
