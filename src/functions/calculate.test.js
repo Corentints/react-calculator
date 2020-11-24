@@ -66,3 +66,37 @@ describe('multiplications', () => {
     expect(calc('-578 x 789.541')).toBe('-456354.698');
   });
 });
+
+describe('sum', () => {
+  test('two positives int', () => {
+    expect(calc('8 + 8')).toBe('16');
+  });
+
+  test('negative by positive', () => {
+    expect(calc('-16 + 578')).toBe('562');
+  });
+
+  test('float by int', () => {
+    expect(calc('1.14151926 + 54')).toBe('55.1415193');
+  });
+
+  test('float by float', () => {
+    expect(calc('1.14151926 + 54.8745')).toBe('56.0160193');
+  });
+
+  test('negative by 0', () => {
+    expect(calc('-42 + 0')).toBe('-42');
+  });
+
+  test('negative by positive', () => {
+    expect(calc('-42 + 42')).toBe('0');
+  });
+
+  test('large positive by large positive', () => {
+    expect(calc('123456789 + 123456789')).toBe('246913578');
+  });
+
+  test('negative float by positive', () => {
+    expect(calc('-123.456 + 47')).toBe('-76.456');
+  });
+});
