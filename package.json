@@ -15,7 +15,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "style": "postcss src/styles/tailwind.css -o src/styles/app.css",
+    "style": "tailwindcss build src/styles/tailwind.css -o src/styles/app.css",
     "start": "yarn run style && react-scripts start",
     "build": "yarn run style && react-scripts build",
     "test": "react-scripts test",
