@@ -1,3 +1,6 @@
+/*
+ * Format number with precision of 7 numbers
+ */
 function formatNumber(number) {
   return parseFloat((number).toPrecision(7)).toString();
 }
