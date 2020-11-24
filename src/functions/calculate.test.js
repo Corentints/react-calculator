@@ -100,3 +100,33 @@ describe('sum', () => {
     expect(calc('-123.456 + 47')).toBe('-76.456');
   });
 });
+
+describe('substraction', () => {
+  test('two positives int', () => {
+    expect(calc('5 - 2')).toBe('3');
+  });
+
+  test('negative float by 0', () => {
+    expect(calc('-5.2 - 0')).toBe('-5.2');
+  });
+
+  test('negative by 0', () => {
+    expect(calc('-5 - 0')).toBe('-5');
+  });
+
+  test('negative by float', () => {
+    expect(calc('-1 - 5.5')).toBe('-6.5');
+  });
+
+  test('float by int', () => {
+    expect(calc('5.5 - 1')).toBe('4.5');
+  });
+
+  test('float by float', () => {
+    expect(calc('5.5 - 5.5')).toBe('0');
+  });
+
+  test('large positive by large positive', () => {
+    expect(calc('123456789 - 123456789')).toBe('0');
+  });
+});
