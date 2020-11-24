@@ -16,8 +16,8 @@
   },
   "scripts": {
     "style": "postcss src/styles/tailwind.css -o src/styles/app.css",
-    "start": "npm run style && react-scripts start",
-    "build": "react-scripts build",
+    "start": "yarn run style && react-scripts start",
+    "build": "yarn run style && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
