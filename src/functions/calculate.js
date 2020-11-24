@@ -37,14 +37,14 @@ function reverseSign(state) {
  */
 export function calc(calculation) {
   const splittedCalc = calculation.split(' ');
-  const a = splittedCalc[0];
+  const a = parseFloat(splittedCalc[0]);
   const operator = splittedCalc[1];
-  const b = splittedCalc[2];
+  const b = parseFloat(splittedCalc[2]);
   let result;
 
   switch (operator) {
     case '÷':
-      result = b === '0' ? 'Error' : a / b;
+      result = b === 0 ? 'Error' : a / b;
       break;
     case 'x':
       result = a * b;
