@@ -13,15 +13,15 @@ describe('divisions', () => {
   });
 
   test('negative int by positive int', () => {
-    expect(calc('-42 ÷ 22')).toBe('-1.909091');
+    expect(calc('-42 ÷ 22')).toBe('-1.90909091');
   });
 
   test('negative float by negative float', () => {
-    expect(calc('-0.42 ÷ 22.42')).toBe('-0.01873327');
+    expect(calc('-0.42 ÷ 22.42')).toBe('-0.0187332739');
   });
 
   test('negative int by positive float', () => {
-    expect(calc('-5 ÷ 22.42')).toBe('-0.2230152');
+    expect(calc('-5 ÷ 22.42')).toBe('-0.223015165');
   });
 
   test('float by int', () => {
@@ -29,7 +29,7 @@ describe('divisions', () => {
   });
 
   test('float by float', () => {
-    expect(calc('6.12 ÷ 12.6')).toBe('0.4857143');
+    expect(calc('6.12 ÷ 12.6')).toBe('0.485714286');
   });
 
   test('error if divided by 0', () => {
@@ -43,11 +43,11 @@ describe('multiplications', () => {
   });
 
   test('float by int', () => {
-    expect(calc('87.5897 x 75')).toBe('6569.227');
+    expect(calc('87.5897 x 75')).toBe('6569.2275');
   });
 
   test('float by float', () => {
-    expect(calc('75.8442 x 87.5897')).toBe('6643.171');
+    expect(calc('75.8442 x 87.5897')).toBe('6643.17072');
   });
 
   test('int by 0', () => {
@@ -63,6 +63,6 @@ describe('multiplications', () => {
   });
 
   test('negative by positive float', () => {
-    expect(calc('-578 x 789.541')).toBe('-456354.7');
+    expect(calc('-578 x 789.541')).toBe('-456354.698');
   });
 });
