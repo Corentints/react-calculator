@@ -1,8 +1,15 @@
-/*
- * Format number with precision of 9 numbers
+/**
+ * @param number
+ * @returns {string} Format number with precision of 9 numbers
  */
 function formatNumber(number) {
-  return parseFloat((number).toPrecision(9)).toString();
+  let numberFormatted = parseFloat((number).toPrecision(9));
+  // if the number length > 9 (without sign and .), reformat it to scientific notation
+  if (numberFormatted.toString().replace('-', '').replace('.', '').length > 9) {
+    // if e+0, remove it (useless)
+    numberFormatted = parseFloat((number).toPrecision(7)).toExponential().replace('e+0', '');
+  }
+  return numberFormatted.toString();
 }
 
 /**
