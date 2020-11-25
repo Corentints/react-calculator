@@ -17,11 +17,11 @@ describe('divisions', () => {
   });
 
   test('negative float by negative float', () => {
-    expect(calc('-0.42 ÷ 22.42')).toBe('-0.0187332739');
+    expect(calc('-0.42 ÷ 22.42')).toBe('-1.873327e-2');
   });
 
   test('negative int by positive float', () => {
-    expect(calc('-5 ÷ 22.42')).toBe('-0.223015165');
+    expect(calc('-5 ÷ 22.42')).toBe('-2.230152e-1');
   });
 
   test('float by int', () => {
@@ -29,7 +29,7 @@ describe('divisions', () => {
   });
 
   test('float by float', () => {
-    expect(calc('6.12 ÷ 12.6')).toBe('0.485714286');
+    expect(calc('6.12 ÷ 12.6')).toBe('4.857143e-1');
   });
 
   test('error if divided by 0', () => {
