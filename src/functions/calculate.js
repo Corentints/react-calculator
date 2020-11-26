@@ -138,7 +138,7 @@ export function calculate(state, value) {
     if (obj.lastValue !== null && obj.result !== null) {
       obj.result = calc(`${obj.result} ${obj.operator} ${obj.lastValue}`).toString();
       obj.lastValue = null;
-      obj.operator = null;
+      obj.operator = '=';
     }
     return obj;
   }
