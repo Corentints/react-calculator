@@ -87,7 +87,7 @@ export function calculate(state, value) {
   obj.result = obj.result.replace('Error', '0');
 
   if (value === 'AC') {
-    if (!obj.operator) {
+    if (!obj.operator || obj.operator === '=') {
       return resetObj();
     }
     obj.lastValue = '0';
