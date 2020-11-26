@@ -13,7 +13,7 @@ class Button extends React.Component {
   }
 
   render() {
-    let baseStyle = 'border border-white p-6 h-full w-full cursor-pointer';
+    let baseStyle = 'border border-white p-4 h-full w-full cursor-pointer';
     let color = 'bg-light-dark';
 
     const {
