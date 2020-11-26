@@ -1,11 +1,24 @@
 /**
+ * Remove "-" and "." from number to get real length
+ * -8.15 => 815
+ * @param number
+ * @returns {string}
+ */
+function numLength(number) {
+  if (number) {
+    return number.toString().replace('-', '').replace('.', '').length;
+  }
+  return '0';
+}
+
+/**
  * @param number
  * @returns {string} Format number with precision of 9 numbers
  */
 function formatNumber(number) {
   let numberFormatted = parseFloat((number).toPrecision(9));
   // if the number length > 9 (without sign and .), reformat it to scientific notation
-  if (numberFormatted.toString().replace('-', '').replace('.', '').length > 9) {
+  if (numLength(numberFormatted) > 9) {
     numberFormatted = parseFloat((number).toPrecision(6)).toExponential()
       .replace('e+0', ''); // if e+0, remove it (useless)
   }
