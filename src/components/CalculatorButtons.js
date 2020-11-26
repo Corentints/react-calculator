@@ -16,7 +16,7 @@ class CalculatorButtons extends React.Component {
   render() {
     const { operator } = this.props;
     return (
-      <div className="grid grid-cols-4 items-center gap-4 text-2xl mt-6 text-center">
+      <div className="grid items-center grid-cols-4 gap-2 mt-6 text-2xl text-center md:gap-4">
         <Button onButtonPressed={this.handleButtonPressed} value="AC" color="gray" />
         <Button onButtonPressed={this.handleButtonPressed} value="+/-" color="gray" />
         <Button onButtonPressed={this.handleButtonPressed} value="%" color="gray" />
