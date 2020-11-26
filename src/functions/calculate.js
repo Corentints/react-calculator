@@ -117,12 +117,15 @@ export function calculate(state, value) {
   }
 
   if (!Number.isNaN(parseFloat(value))) {
-    if (!obj.operator) { // no operator entered, so we modify the result
-      if (obj.result === '0') {
-        obj.result = value;
-      } else {
-        obj.result += value;
-      }
+    if ((numLength(obj.result) >= 9 && !obj.operator) || numLength(obj.lastValue) >= 9) {
+      return obj;
+    }
+
+    if ((!obj.operator && obj.result === '0') || obj.operator === '=') {
+      obj.result = value;
+      obj.operator = null;
+    } else if (!obj.operator) {
+      obj.result += value;
     } else if (obj.lastValue === '0' || obj.lastValue === null) {
       obj.lastValue = value;
     } else {
