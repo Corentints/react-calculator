@@ -23,7 +23,7 @@ class Calculator extends React.Component {
     const { operator } = this.state;
     const { result, lastValue } = this.state;
     return (
-      <div className="flex flex-col w-full p-2 m-auto text-white md:p-8 md:w-8/12 lg:w-6/12 xl:w-4/12">
+      <div className="w-full h-full p-2 m-auto text-white md:p-8 md:w-8/12 lg:w-6/12 xl:w-4/12">
         <Result result={lastValue || result} />
         <CalculatorButtons onButtonPressed={this.handleButtonPressed} operator={operator} />
       </div>
