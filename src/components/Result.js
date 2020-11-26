@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Result(props) {
   const { result } = props;
   return (
-    <div className="border text-6xl text-right py-2 px-4">{result}</div>
+    <div className="px-4 py-2 text-4xl text-right border md:text-6xl">{result}</div>
   );
 }
 
