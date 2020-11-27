@@ -44,7 +44,7 @@ function resetObj() {
  */
 function reverseSign(state) {
   const obj = state;
-  if (!obj.operator) {
+  if (!obj.operator || obj.operator === '=') {
     obj.result = formatNumber(-obj.result);
   } else {
     obj.lastValue = formatNumber(-obj.lastValue);
