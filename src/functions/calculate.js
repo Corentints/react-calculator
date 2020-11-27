@@ -143,7 +143,5 @@ export function calculate(state, value) {
     return obj;
   }
 
-  obj.operator = value;
-
-  return obj;
+  return { ...obj, operator: value };
 }
