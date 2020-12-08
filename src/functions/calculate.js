@@ -108,6 +108,10 @@ export function calculate(state, value) {
   }
 
   if (value === '.') {
+    if (obj.operator === '=') {
+      obj.result = '0.';
+      obj.operator = null;
+    }
     if (obj.lastValue !== null) {
       obj.lastValue += obj.lastValue.includes('.') ? '' : '.';
     } else {
